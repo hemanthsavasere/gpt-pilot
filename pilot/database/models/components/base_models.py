@@ -2,9 +2,9 @@ from peewee import Model, UUIDField, DateTimeField
 from datetime import datetime
 from uuid import uuid4
 
-from ....database.config import DATABASE_TYPE
-from ....database.connection import get_postgres_database
-from ....database.connection.sqlite import get_sqlite_database
+from pilot.database.config import DATABASE_TYPE
+from pilot.database.connection.postgres import get_postgres_database
+from pilot.database.connection.sqlite import get_sqlite_database
 
 
 # Establish connection to the database

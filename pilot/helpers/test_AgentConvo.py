@@ -1,10 +1,10 @@
 import builtins
 from dotenv import load_dotenv
-from ..database.database import database
-from ..const.function_calls import IMPLEMENT_TASK
-from ..helpers.agents.Developer import Developer
-from ..helpers.AgentConvo import AgentConvo
-from ..utils.custom_print import get_custom_print
+from pilot.database.database import database
+from pilot.const.function_calls import IMPLEMENT_TASK
+from pilot.helpers.agents.Developer import Developer
+from pilot.helpers.AgentConvo import AgentConvo
+from pilot.utils.custom_print import get_custom_print
 from .test_Project import create_project
 
 load_dotenv()

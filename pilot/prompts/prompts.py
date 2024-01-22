@@ -1,11 +1,11 @@
 # prompts/prompts.py
-from ..utils.style import color_white_bold
-from ..const import common
-from ..const.llm import MAX_QUESTIONS, END_RESPONSE
-from ..utils.llm_connection import create_gpt_chat_completion
-from ..utils.utils import get_sys_message, get_prompt
-from ..utils.questionary import styled_select, styled_text
-from ..logger.logger import logger
+from pilot.utils.style import color_white_bold
+from pilot.const import common
+from pilot.const.llm import MAX_QUESTIONS, END_RESPONSE
+from pilot.utils.llm_connection import create_gpt_chat_completion
+from pilot.utils.utils import get_sys_message, get_prompt
+from pilot.utils.questionary import styled_select, styled_text
+from pilot.logger.logger import logger
 
 
 def ask_for_app_type():

@@ -2,8 +2,8 @@ import platform
 import questionary
 import re
 import sys
-from database.database import save_user_input, get_saved_user_input
-from utils.style import color_yellow_bold, style_config
+from pilot.database.database import save_user_input, get_saved_user_input
+from pilot.utils.style import color_yellow_bold, style_config
 
 
 def remove_ansi_codes(s: str) -> str:

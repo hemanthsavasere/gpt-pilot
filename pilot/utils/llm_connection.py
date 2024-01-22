@@ -8,15 +8,15 @@ import tiktoken
 from prompt_toolkit.styles import Style
 
 from jsonschema import validate, ValidationError
-from utils.style import color_red
+from pilot.utils.style import color_red
 from typing import List
-from const.llm import MAX_GPT_MODEL_TOKENS
-from const.messages import AFFIRMATIVE_ANSWERS
-from logger.logger import logger, logging
-from helpers.exceptions import TokenLimitError, ApiKeyNotDefinedError
-from utils.utils import fix_json, get_prompt
-from utils.function_calling import add_function_calls_to_request, FunctionCallSet, FunctionType
-from utils.questionary import styled_text
+from pilot.const.llm import MAX_GPT_MODEL_TOKENS
+from pilot.const.messages import AFFIRMATIVE_ANSWERS
+from pilot.logger.logger import logger, logging
+from pilot.helpers.exceptions import TokenLimitError, ApiKeyNotDefinedError
+from pilot.utils.utils import fix_json, get_prompt
+from pilot.utils.function_calling import add_function_calls_to_request, FunctionCallSet, FunctionType
+from pilot.utils.questionary import styled_text
 
 from .telemetry import telemetry
 

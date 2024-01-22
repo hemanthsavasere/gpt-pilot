@@ -1,5 +1,5 @@
 from playhouse.shortcuts import model_to_dict
-from ..utils.style import color_yellow, color_red
+from pilot.utils.style import color_yellow, color_red
 from peewee import DoesNotExist, IntegrityError
 from functools import reduce
 import operator
@@ -9,8 +9,8 @@ if DATABASE_TYPE == "postgres":
     from psycopg2.extensions import quote_ident
 
 import os
-from ..const.common import PROMPT_DATA_TO_IGNORE, STEPS
-from ..logger import logger
+from pilot.const.common import PROMPT_DATA_TO_IGNORE, STEPS
+from pilot.logger import logger
 from models.components.base_models import database
 from models.user import User
 from models.app import App

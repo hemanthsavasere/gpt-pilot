@@ -1,6 +1,6 @@
 import builtins
-from helpers.ipc import IPCClient
-from const.ipc import MESSAGE_TYPE, LOCAL_IGNORE_MESSAGE_TYPES
+from pilot.helpers.ipc import IPCClient
+from pilot.const.ipc import MESSAGE_TYPE, LOCAL_IGNORE_MESSAGE_TYPES
 
 
 def get_custom_print(args):

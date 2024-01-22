@@ -1,14 +1,14 @@
 import json
-from utils.style import color_green_bold
-from helpers.AgentConvo import AgentConvo
-from helpers.Agent import Agent
-from logger.logger import logger
-from database.database import get_app, save_progress, save_app, get_progress_steps
-from utils.utils import should_execute_step, generate_app_data, step_already_finished, clean_filename
-from utils.files import setup_workspace
-from prompts.prompts import ask_for_app_type, ask_for_main_app_definition, get_additional_info_from_openai, \
+from pilot.utils.style import color_green_bold
+from pilot.helpers.AgentConvo import AgentConvo
+from pilot.helpers.Agent import Agent
+from pilot.logger.logger import logger
+from pilot.database.database import get_app, save_progress, save_app, get_progress_steps
+from pilot.utils.utils import should_execute_step, generate_app_data, step_already_finished, clean_filename
+from pilot.utils.files import setup_workspace
+from pilot.prompts.prompts import ask_for_app_type, ask_for_main_app_definition, get_additional_info_from_openai, \
     generate_messages_from_description, ask_user, get_prompt
-from const.llm import END_RESPONSE
+from pilot.const.llm import END_RESPONSE
 
 PROJECT_DESCRIPTION_STEP = 'project_description'
 USER_STORIES_STEP = 'user_stories'

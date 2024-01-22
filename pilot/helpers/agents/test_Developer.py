@@ -6,14 +6,15 @@ from unittest.mock import patch, MagicMock
 
 import requests
 
-from helpers.AgentConvo import AgentConvo
+from pilot.helpers.AgentConvo import AgentConvo
 from dotenv import load_dotenv
+
 load_dotenv()
 
-from main import get_custom_print
+from pilot.main import get_custom_print
 from .Developer import Developer, ENVIRONMENT_SETUP_STEP
-from test.mock_questionary import MockQuestionary
-from helpers.test_Project import create_project
+from pilot.test.mock_questionary import MockQuestionary
+from pilot.helpers.test_Project import create_project
 
 
 class TestDeveloper:
@@ -25,7 +26,7 @@ class TestDeveloper:
         self.project.app_id = 'test-developer'
         self.project.name = name
         self.project.set_root_path(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                                              '../../../workspace/TestDeveloper')))
+                                                                '../../../workspace/TestDeveloper')))
 
         self.project.technologies = []
         self.project.current_step = ENVIRONMENT_SETUP_STEP
@@ -79,7 +80,8 @@ class TestDeveloper:
     @patch('helpers.AgentConvo.get_saved_development_step')
     @patch('helpers.AgentConvo.save_development_step')
     @patch('helpers.AgentConvo.create_gpt_chat_completion',
-           return_value={'text': '{"tasks": [{"command": "ls -al"}, {"command": "ls -al src"}, {"command": "ls -al test"}, {"command": "ls -al build"}]}'})
+           return_value={
+               'text': '{"tasks": [{"command": "ls -al"}, {"command": "ls -al src"}, {"command": "ls -al test"}, {"command": "ls -al build"}]}'})
     def test_implement_task_reject_with_user_input(self, mock_completion, mock_save, mock_get_saved_step):
         # Given any project
         project = create_project()
@@ -105,7 +107,8 @@ class TestDeveloper:
         # Then we include the user input in the conversation to update the task list
         assert mock_completion.call_count == 3
         prompt = mock_completion.call_args_list[2].args[0][2]['content']
-        assert prompt.startswith('{"tasks": [{"command": "ls -al"}, {"command": "ls -al src"}, {"command": "ls -al test"}, {"command": "ls -al build"}]}'.lstrip())
+        assert prompt.startswith(
+            '{"tasks": [{"command": "ls -al"}, {"command": "ls -al src"}, {"command": "ls -al test"}, {"command": "ls -al build"}]}'.lstrip())
         # and call `execute_task()` again
         assert developer.execute_task.call_count == 2
 
@@ -119,9 +122,9 @@ class TestDeveloper:
     # @patch('helpers.cli.ask_user', return_value='yes')
     # @patch('helpers.cli.get_saved_command_run')
     def test_code_changes_command_test(self, mock_get_saved_step, mock_save, mock_chat_completion,
-                               # Note: the 2nd line below will use the LLM to debug, uncomment the @patches accordingly
-                               mock_execute_command):
-                               # mock_ask_user, mock_get_saved_command_run):
+                                       # Note: the 2nd line below will use the LLM to debug, uncomment the @patches accordingly
+                                       mock_execute_command):
+        # mock_ask_user, mock_get_saved_command_run):
         # Given
         monkey = None
         convo = AgentConvo(self.developer)
@@ -140,7 +143,8 @@ class TestDeveloper:
     @patch('helpers.AgentConvo.create_gpt_chat_completion',
            return_value={'text': '{"type": "manual_test", "manual_test_description": "Does it look good?"}'})
     @patch('helpers.Project.ask_user', return_value='continue')
-    def test_code_changes_manual_test_continue(self, mock_get_saved_step, mock_save, mock_chat_completion, mock_ask_user):
+    def test_code_changes_manual_test_continue(self, mock_get_saved_step, mock_save, mock_chat_completion,
+                                               mock_ask_user):
         # Given
         monkey = None
         convo = AgentConvo(self.developer)
@@ -158,7 +162,8 @@ class TestDeveloper:
     @patch('helpers.AgentConvo.create_gpt_chat_completion')
     @patch('utils.questionary.get_saved_user_input')
     # https://github.com/Pythagora-io/gpt-pilot/issues/35
-    def test_code_changes_manual_test_no(self, mock_get_saved_user_input, mock_chat_completion, mock_save, mock_get_saved_step):
+    def test_code_changes_manual_test_no(self, mock_get_saved_user_input, mock_chat_completion, mock_save,
+                                         mock_get_saved_step):
         # Given
         monkey = None
         convo = AgentConvo(self.developer)
@@ -168,7 +173,8 @@ class TestDeveloper:
 
         mock_chat_completion.side_effect = [
             {'text': '{"type": "manual_test", "manual_test_description": "Does it look good?"}'},
-            {'text': '{"thoughts": "hmmm...", "reasoning": "testing", "steps": [{"type": "command", "command": {"command": "something scary", "timeout": 3000}, "check_if_fixed": true}]}'},
+            {
+                'text': '{"thoughts": "hmmm...", "reasoning": "testing", "steps": [{"type": "command", "command": {"command": "something scary", "timeout": 3000}, "check_if_fixed": true}]}'},
             {'text': 'do something else scary'},
         ]
 

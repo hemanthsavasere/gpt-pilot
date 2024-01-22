@@ -1,6 +1,6 @@
 import os
 from unittest.mock import patch
-from utils.files import setup_workspace
+from pilot.utils.files import setup_workspace
 
 
 def mocked_create_directory(path, exist_ok=True):

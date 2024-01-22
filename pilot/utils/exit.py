@@ -3,10 +3,10 @@ import os
 import hashlib
 import requests
 
-from helpers.cli import terminate_running_processes
-from utils.questionary import styled_text
+from pilot.helpers.cli import terminate_running_processes
+from pilot.utils.questionary import styled_text
 
-from utils.telemetry import telemetry
+from pilot.utils.telemetry import telemetry
 
 
 def send_telemetry(path_id=None, event='pilot-exit'):

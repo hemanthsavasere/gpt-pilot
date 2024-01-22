@@ -5,11 +5,11 @@ from unittest.mock import patch
 from dotenv import load_dotenv
 load_dotenv()
 
-from main import get_custom_print
-from helpers.agents.TechLead import TechLead, DEVELOPMENT_PLANNING_STEP
-from helpers.Project import Project
-from test.test_utils import assert_non_empty_string
-from test.mock_questionary import MockQuestionary
+from pilot.main import get_custom_print
+from pilot.helpers.agents.TechLead import TechLead, DEVELOPMENT_PLANNING_STEP
+from pilot.helpers.Project import Project
+from pilot.test.test_utils import assert_non_empty_string
+from pilot.test.mock_questionary import MockQuestionary
 
 
 class TestTechLead:

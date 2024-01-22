@@ -1,13 +1,13 @@
-from utils.utils import step_already_finished
-from helpers.Agent import Agent
+from pilot.utils.utils import step_already_finished
+from pilot.helpers.Agent import Agent
 import json
-from utils.style import color_green_bold
-from const.function_calls import ARCHITECTURE
+from pilot.utils.style import color_green_bold
+from pilot.const.function_calls import ARCHITECTURE
 
-from utils.utils import should_execute_step, generate_app_data
-from database.database import save_progress, get_progress_steps
-from logger.logger import logger
-from helpers.AgentConvo import AgentConvo
+from pilot.utils.utils import should_execute_step, generate_app_data
+from pilot.database.database import save_progress, get_progress_steps
+from pilot.logger.logger import logger
+from pilot.helpers.AgentConvo import AgentConvo
 
 ARCHITECTURE_STEP = 'architecture'
 

@@ -1,4 +1,4 @@
-from .utils import should_execute_step
+from pilot.utils.utils import should_execute_step
 
 
 class TestShouldExecuteStep:

@@ -11,9 +11,9 @@ import re
 from jinja2 import Environment, FileSystemLoader
 from .style import color_green
 
-from const.llm import MAX_QUESTIONS, END_RESPONSE
-from const.common import ROLES, STEPS
-from logger.logger import logger
+from pilot.const.llm import MAX_QUESTIONS, END_RESPONSE
+from pilot.const.common import ROLES, STEPS
+from pilot.logger.logger import logger
 
 prompts_path = os.path.join(os.path.dirname(__file__), '..', 'prompts')
 file_loader = FileSystemLoader(prompts_path)

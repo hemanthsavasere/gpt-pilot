@@ -9,7 +9,7 @@ from unittest.mock import patch, MagicMock
 
 import pytest
 
-from utils.settings import (
+from pilot.utils.settings import (
     Loader,
     Settings,
     get_git_commit,

@@ -1,7 +1,7 @@
 from peewee import AutoField, ForeignKeyField, TextField, CharField, IntegerField
 
-from ..models.components.base_models import BaseModel
-from ..models.app import App
+from pilot.database.models.components.base_models import BaseModel
+from pilot.database.models.app import App
 
 
 class CommandRuns(BaseModel):

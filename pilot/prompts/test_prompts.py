@@ -1,4 +1,4 @@
-from .prompts import get_prompt
+from pilot.prompts.prompts import get_prompt
 
 
 def test_prompt_ran_command_None_exit():

@@ -1,8 +1,8 @@
 import os
-from helpers.agents import Developer, ENVIRONMENT_SETUP_STEP
-from helpers import AgentConvo, Project
-from helpers.files import update_file
-from database import save_app
+from pilot.helpers.agents import Developer, ENVIRONMENT_SETUP_STEP
+from pilot.helpers import AgentConvo, Project
+from pilot.helpers.files import update_file
+from pilot.database import save_app
 
 
 def run_command_until_success():

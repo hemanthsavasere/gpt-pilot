@@ -1,8 +1,8 @@
-from const.function_calls import GET_DOCUMENTATION_FILE
-from helpers.AgentConvo import AgentConvo
-from helpers.Agent import Agent
-from utils.files import count_lines_of_code
-from utils.style import color_green_bold, color_green
+from pilot.const.function_calls import GET_DOCUMENTATION_FILE
+from pilot.helpers.AgentConvo import AgentConvo
+from pilot.helpers.Agent import Agent
+from pilot.utils.files import count_lines_of_code
+from pilot.utils.style import color_green_bold, color_green
 
 
 class TechnicalWriter(Agent):

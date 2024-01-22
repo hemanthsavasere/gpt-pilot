@@ -2,8 +2,8 @@ import platform
 import uuid
 import re
 
-from const.messages import WHEN_USER_DONE
-from utils.style import (
+from pilot.const.messages import WHEN_USER_DONE
+from pilot.utils.style import (
     color_green,
     color_green_bold,
     color_red,
@@ -12,21 +12,21 @@ from utils.style import (
     color_cyan_bold,
     color_white_bold
 )
-from helpers.exceptions.TokenLimitError import TokenLimitError
-from const.code_execution import MAX_COMMAND_DEBUG_TRIES
-from helpers.exceptions.TooDeepRecursionError import TooDeepRecursionError
-from helpers.Debugger import Debugger
-from utils.questionary import styled_text
-from utils.utils import step_already_finished
-from helpers.agents.CodeMonkey import CodeMonkey
-from logger.logger import logger
-from helpers.Agent import Agent
-from helpers.AgentConvo import AgentConvo
-from utils.utils import should_execute_step, array_of_objects_to_string, generate_app_data
-from helpers.cli import run_command_until_success, execute_command_and_check_cli_response, running_processes
-from const.function_calls import FILTER_OS_TECHNOLOGIES, EXECUTE_COMMANDS, GET_TEST_TYPE, IMPLEMENT_TASK, COMMAND_TO_RUN
-from database.database import save_progress, get_progress_steps, update_app_status
-from utils.utils import get_os_info
+from pilot.helpers.exceptions.TokenLimitError import TokenLimitError
+from pilot.const.code_execution import MAX_COMMAND_DEBUG_TRIES
+from pilot.helpers.exceptions.TooDeepRecursionError import TooDeepRecursionError
+from pilot.helpers.Debugger import Debugger
+from pilot.utils.questionary import styled_text
+from pilot.utils.utils import step_already_finished
+from pilot.helpers.agents.CodeMonkey import CodeMonkey
+from pilot.logger.logger import logger
+from pilot.helpers.Agent import Agent
+from pilot.helpers.AgentConvo import AgentConvo
+from pilot.utils.utils import should_execute_step, array_of_objects_to_string, generate_app_data
+from pilot.helpers.cli import run_command_until_success, execute_command_and_check_cli_response, running_processes
+from pilot.const.function_calls import FILTER_OS_TECHNOLOGIES, EXECUTE_COMMANDS, GET_TEST_TYPE, IMPLEMENT_TASK, COMMAND_TO_RUN
+from pilot.database.database import save_progress, get_progress_steps, update_app_status
+from pilot.utils.utils import get_os_info
 
 ENVIRONMENT_SETUP_STEP = 'environment_setup'
 

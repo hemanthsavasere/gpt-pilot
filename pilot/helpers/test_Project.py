@@ -3,9 +3,10 @@ import json
 from pathlib import Path
 import pytest
 from unittest.mock import patch, MagicMock
-from ..helpers.Project import Project
+from pilot.helpers.Project import Project
 
 test_root = str(Path(__file__).parent.parent.parent / Path("workspace") / Path("gpt-pilot-test"))
+
 
 def create_project():
     project = Project({

@@ -6,12 +6,12 @@ from unittest.mock import patch, MagicMock
 from dotenv import load_dotenv
 
 load_dotenv()
-from ..utils.custom_print import get_custom_print
-from ..helpers.agents.Developer import Developer
-from ..helpers.AgentConvo import AgentConvo
-from ..helpers.Debugger import Debugger
-from ..helpers.test_Project import create_project
-from ..test.mock_questionary import MockQuestionary
+from pilot.utils.custom_print import get_custom_print
+from pilot.helpers.agents.Developer import Developer
+from pilot.helpers.AgentConvo import AgentConvo
+from pilot.helpers.Debugger import Debugger
+from pilot.helpers.test_Project import create_project
+from pilot.test.mock_questionary import MockQuestionary
 
 
 ################## NOTE: this test needs to be ran in debug with breakpoints ##################

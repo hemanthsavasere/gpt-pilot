@@ -2,7 +2,7 @@ from fnmatch import fnmatch
 import os.path
 from typing import Optional
 
-from const.common import IGNORE_PATHS, IGNORE_SIZE_THRESHOLD
+from pilot.const.common import IGNORE_PATHS, IGNORE_SIZE_THRESHOLD
 
 
 class IgnoreMatcher:

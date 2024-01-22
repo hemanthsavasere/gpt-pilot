@@ -1,5 +1,5 @@
 from peewee import PostgresqlDatabase
-from database.config import DB_NAME, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DATABASE_TYPE
+from pilot.database.config import DB_NAME, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DATABASE_TYPE
 
 if DATABASE_TYPE == "postgres":
     import psycopg2

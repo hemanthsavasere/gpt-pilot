@@ -2,10 +2,10 @@ import logging
 
 from peewee import ForeignKeyField, BlobField
 
-from ..models.components.base_models import BaseModel
-from ..models.development_steps import DevelopmentSteps
-from ..models.app import App
-from ..models.files import File
+from pilot.database.models.components.base_models import BaseModel
+from pilot.database.models.development_steps import DevelopmentSteps
+from pilot.database.models.app import App
+from pilot.database.models.files import File
 
 log = logging.getLogger(__name__)
 

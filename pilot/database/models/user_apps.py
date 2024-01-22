@@ -1,8 +1,8 @@
 from peewee import AutoField, CharField, ForeignKeyField
 
-from ..models.components.base_models import BaseModel
-from ..models.app import App
-from ..models.user import User
+from pilot.database.models.components.base_models import BaseModel
+from pilot.database.models.app import App
+from pilot.database.models.user import User
 
 
 class UserApps(BaseModel):

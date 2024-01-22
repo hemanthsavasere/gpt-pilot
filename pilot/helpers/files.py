@@ -2,8 +2,9 @@ from pathlib import Path
 import os
 from typing import Optional, Union
 
-from ..utils.style import color_green
-from ..utils.ignore import IgnoreMatcher
+from pilot.utils.style import color_green
+from pilot.utils.ignore import IgnoreMatcher
+
 
 def update_file(path: str, new_content: Union[str, bytes], project=None):
     """

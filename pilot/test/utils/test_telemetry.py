@@ -1,7 +1,7 @@
 from unittest.mock import patch
 
 
-from utils.telemetry import Telemetry
+from pilot.utils.telemetry import Telemetry
 
 
 @patch("utils.telemetry.settings")

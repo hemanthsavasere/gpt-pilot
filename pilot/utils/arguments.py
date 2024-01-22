@@ -4,10 +4,10 @@ import re
 import sys
 import uuid
 from getpass import getuser
-from database.database import get_app, get_app_by_user_workspace
-from utils.style import color_green_bold, color_red, style_config
-from utils.utils import should_execute_step
-from const.common import STEPS
+from pilot.database.database import get_app, get_app_by_user_workspace
+from pilot.utils.style import color_green_bold, color_red, style_config
+from pilot.utils.utils import should_execute_step
+from pilot.const.common import STEPS
 
 
 def get_arguments():

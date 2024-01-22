@@ -5,17 +5,17 @@ import pytest
 from unittest.mock import call, patch, Mock
 from dotenv import load_dotenv
 from jsonschema import ValidationError
-from const.function_calls import ARCHITECTURE, DEVELOPMENT_PLAN
-from helpers.AgentConvo import AgentConvo
-from helpers.Project import Project
-from helpers.agents.Architect import Architect
-from helpers.agents.TechLead import TechLead
-from utils.function_calling import parse_agent_response, FunctionType
-from test.test_utils import assert_non_empty_string
-from test.mock_questionary import MockQuestionary
-from utils.llm_connection import create_gpt_chat_completion, stream_gpt_completion, \
+from pilot.const.function_calls import ARCHITECTURE, DEVELOPMENT_PLAN
+from pilot.helpers.AgentConvo import AgentConvo
+from pilot.helpers.Project import Project
+from pilot.helpers.agents.Architect import Architect
+from pilot.helpers.agents.TechLead import TechLead
+from pilot.utils.function_calling import parse_agent_response, FunctionType
+from pilot.test.test_utils import assert_non_empty_string
+from pilot.test.mock_questionary import MockQuestionary
+from pilot.utils.llm_connection import create_gpt_chat_completion, stream_gpt_completion, \
     assert_json_response, assert_json_schema, clean_json_response, retry_on_exception
-from main import get_custom_print
+from pilot.main import get_custom_print
 
 load_dotenv()
 

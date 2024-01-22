@@ -3,7 +3,8 @@ import socket
 import json
 import time
 
-from ..utils.utils import json_serial
+from pilot.utils.utils import json_serial
+
 
 class IPCClient:
     def __init__(self, port):

@@ -1,5 +1,5 @@
 from peewee import TextField
-from ..models.components.progress_step import ProgressStep
+from pilot.database.models.components.progress_step import ProgressStep
 
 
 class ProjectDescription(ProgressStep):

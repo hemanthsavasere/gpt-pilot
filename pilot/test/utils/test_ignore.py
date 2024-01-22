@@ -2,8 +2,9 @@ from unittest.mock import patch
 import pytest
 from tempfile import TemporaryDirectory
 
-from utils.ignore import IgnoreMatcher
+from pilot.utils.ignore import IgnoreMatcher
 from os.path import sep, join, dirname
+
 
 @pytest.mark.parametrize(
     ("path", "expected"),
@@ -65,8 +66,8 @@ def test_full_path(ignore, path, expected):
 @pytest.mark.parametrize(
     ("size", "expected"),
     [
-        (1024*1024, True),  # 1MB
-        (102400, False),    # 100KB
+        (1024 * 1024, True),  # 1MB
+        (102400, False),  # 100KB
     ]
 )
 @patch("utils.ignore.os.path.isfile")
@@ -87,7 +88,7 @@ def test_ignore_large_files(mock_getsize, mock_isfile, size, expected):
     ("content", "expected"),
     [
         (("hello world ŠĐŽČĆ").encode("utf-8"), False),  # text
-        (b"\x89\x50\x4e\x47\x0d\x0a\x1a\x0a\x00\x00\x00\x0d\x49\x48\x44\x52", True), # image
+        (b"\x89\x50\x4e\x47\x0d\x0a\x1a\x0a\x00\x00\x00\x0d\x49\x48\x44\x52", True),  # image
     ]
 )
 def test_ignore_binary_files(content, expected):

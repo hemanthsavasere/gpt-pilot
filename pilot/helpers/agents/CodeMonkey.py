@@ -2,12 +2,12 @@ import os.path
 import re
 from typing import Optional
 
-from helpers.AgentConvo import AgentConvo
-from helpers.Agent import Agent
-from helpers.files import get_file_contents
-from const.function_calls import GET_FILE_TO_MODIFY
+from pilot.helpers.AgentConvo import AgentConvo
+from pilot.helpers.Agent import Agent
+from pilot.helpers.files import get_file_contents
+from pilot.const.function_calls import GET_FILE_TO_MODIFY
 
-from utils.exit import trace_code_event
+from pilot.utils.exit import trace_code_event
 
 class CodeMonkey(Agent):
     save_dev_steps = True

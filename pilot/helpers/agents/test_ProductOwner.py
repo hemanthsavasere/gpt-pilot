@@ -3,8 +3,8 @@ import builtins
 import pytest
 from dotenv import load_dotenv
 from unittest.mock import patch, MagicMock
-from main import get_custom_print
-from helpers.test_Project import create_project
+from pilot.main import get_custom_print
+from pilot.helpers.test_Project import create_project
 from .ProductOwner import ProductOwner
 
 load_dotenv()

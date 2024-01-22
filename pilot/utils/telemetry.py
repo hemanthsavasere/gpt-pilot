@@ -8,8 +8,8 @@ from uuid import uuid4
 
 import requests
 
-from .settings import settings, version, config_path
-from const.telemetry import LARGE_REQUEST_THRESHOLD, SLOW_REQUEST_THRESHOLD
+from pilot.utils.settings import settings, version, config_path
+from pilot.const.telemetry import LARGE_REQUEST_THRESHOLD, SLOW_REQUEST_THRESHOLD
 
 log = getLogger(__name__)
 

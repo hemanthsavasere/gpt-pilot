@@ -3,8 +3,8 @@ from os.path import normpath, sep
 import pytest
 
 
-from helpers.agents.CodeMonkey import CodeMonkey
-from const.function_calls import GET_FILE_TO_MODIFY
+from pilot.helpers.agents.CodeMonkey import CodeMonkey
+from pilot.const.function_calls import GET_FILE_TO_MODIFY
 
 @pytest.mark.parametrize(
     ("content", "expected_blocks"),

@@ -1,11 +1,11 @@
 import pytest
 from unittest.mock import patch
 
-from helpers.AgentConvo import AgentConvo
-from helpers.agents import Developer
-from .utils import create_project
-from helpers.cli import terminate_running_processes
-from test.mock_questionary import MockQuestionary
+from pilot.helpers.AgentConvo import AgentConvo
+from pilot.helpers.agents import Developer
+from pilot.utils import create_project
+from pilot.helpers.cli import terminate_running_processes
+from pilot.test.mock_questionary import MockQuestionary
 
 
 @pytest.mark.ux_test
