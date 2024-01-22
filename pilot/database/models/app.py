@@ -1,7 +1,7 @@
 from peewee import ForeignKeyField, CharField
 
-from database.models.components.base_models import BaseModel
-from database.models.user import User
+from ..models.components.base_models import BaseModel
+from ..models.user import User
 
 
 class App(BaseModel):

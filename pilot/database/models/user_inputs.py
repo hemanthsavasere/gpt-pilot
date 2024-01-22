@@ -1,7 +1,7 @@
 from peewee import AutoField, ForeignKeyField, TextField, CharField
 
-from database.models.components.base_models import BaseModel
-from database.models.app import App
+from ..models.components.base_models import BaseModel
+from ..models.app import App
 
 
 class UserInputs(BaseModel):

@@ -1,33 +1,33 @@
 from playhouse.shortcuts import model_to_dict
-from utils.style import color_yellow, color_red
+from ..utils.style import color_yellow, color_red
 from peewee import DoesNotExist, IntegrityError
 from functools import reduce
 import operator
-from database.config import DB_NAME, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DATABASE_TYPE
+from config import DB_NAME, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DATABASE_TYPE
 if DATABASE_TYPE == "postgres":
     import psycopg2
     from psycopg2.extensions import quote_ident
 
 import os
-from const.common import PROMPT_DATA_TO_IGNORE, STEPS
-from logger.logger import logger
-from database.models.components.base_models import database
-from database.models.user import User
-from database.models.app import App
-from database.models.project_description import ProjectDescription
-from database.models.user_stories import UserStories
-from database.models.user_tasks import UserTasks
-from database.models.architecture import Architecture
-from database.models.development_planning import DevelopmentPlanning
-from database.models.development_steps import DevelopmentSteps
-from database.models.environment_setup import EnvironmentSetup
-from database.models.development import Development
-from database.models.file_snapshot import FileSnapshot
-from database.models.command_runs import CommandRuns
-from database.models.user_apps import UserApps
-from database.models.user_inputs import UserInputs
-from database.models.files import File
-from database.models.feature import Feature
+from ..const.common import PROMPT_DATA_TO_IGNORE, STEPS
+from ..logger import logger
+from models.components.base_models import database
+from models.user import User
+from models.app import App
+from models.project_description import ProjectDescription
+from models.user_stories import UserStories
+from models.user_tasks import UserTasks
+from models.architecture import Architecture
+from models.development_planning import DevelopmentPlanning
+from models.development_steps import DevelopmentSteps
+from models.environment_setup import EnvironmentSetup
+from models.development import Development
+from models.file_snapshot import FileSnapshot
+from models.command_runs import CommandRuns
+from models.user_apps import UserApps
+from models.user_inputs import UserInputs
+from models.files import File
+from models.feature import Feature
 
 TABLES = [
             User,

@@ -1,6 +1,6 @@
 from peewee import CharField
 
-from database.models.components.base_models import BaseModel
+from ..models.components.base_models import BaseModel
 
 
 class User(BaseModel):

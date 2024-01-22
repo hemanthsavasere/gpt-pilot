@@ -2,8 +2,8 @@ from pathlib import Path
 from os.path import commonprefix, join, sep
 from peewee import AutoField, CharField, TextField, ForeignKeyField
 
-from database.models.components.base_models import BaseModel
-from database.models.app import App
+from ..models.components.base_models import BaseModel
+from ..models.app import App
 
 
 class File(BaseModel):
