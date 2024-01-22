@@ -2,6 +2,7 @@ import os
 import shutil
 import zipfile
 
+
 def main():
     # Define the base directory (one level up from /scripts)
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -53,6 +54,7 @@ def main():
     for tmp_path, orig_path in tmp_excluded_paths:
         if os.path.exists(tmp_path):
             shutil.move(tmp_path, orig_path)
+
 
 if __name__ == "__main__":
     main()
