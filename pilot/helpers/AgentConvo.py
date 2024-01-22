@@ -2,17 +2,17 @@ import json
 import re
 import subprocess
 import uuid
-from utils.style import color_yellow, color_yellow_bold
+from ..utils.style import color_yellow, color_yellow_bold
 
-from database.database import get_saved_development_step, save_development_step, delete_all_subsequent_steps
-from helpers.exceptions.TokenLimitError import TokenLimitError
-from utils.function_calling import parse_agent_response, FunctionCallSet
-from utils.llm_connection import create_gpt_chat_completion
-from utils.utils import get_prompt, get_sys_message, capitalize_first_word_with_underscores
-from logger.logger import logger
-from prompts.prompts import ask_user
-from const.llm import END_RESPONSE
-from helpers.cli import running_processes
+from ..database.database import get_saved_development_step, save_development_step, delete_all_subsequent_steps
+from ..helpers.exceptions.TokenLimitError import TokenLimitError
+from ..utils.function_calling import parse_agent_response, FunctionCallSet
+from ..utils.llm_connection import create_gpt_chat_completion
+from ..utils.utils import get_prompt, get_sys_message, capitalize_first_word_with_underscores
+from ..logger.logger import logger
+from ..prompts.prompts import ask_user
+from ..const.llm import END_RESPONSE
+from ..helpers.cli import running_processes
 
 
 class AgentConvo:

@@ -6,31 +6,31 @@ from typing import Tuple
 
 import peewee
 
-from const.messages import CHECK_AND_CONTINUE, AFFIRMATIVE_ANSWERS, NEGATIVE_ANSWERS
-from utils.style import color_yellow_bold, color_cyan, color_white_bold, color_green
-from const.common import STEPS
-from database.database import delete_unconnected_steps_from, delete_all_app_development_data, update_app_status
-from const.ipc import MESSAGE_TYPE
-from prompts.prompts import ask_user
-from helpers.exceptions.TokenLimitError import TokenLimitError
-from utils.questionary import styled_text
-from helpers.files import get_directory_contents, get_file_contents, clear_directory, update_file
-from helpers.cli import build_directory_tree
-from helpers.agents.TechLead import TechLead
-from helpers.agents.Developer import Developer
-from helpers.agents.Architect import Architect
-from helpers.agents.ProductOwner import ProductOwner
-from helpers.agents.TechnicalWriter import TechnicalWriter
+from ..const.messages import CHECK_AND_CONTINUE, AFFIRMATIVE_ANSWERS, NEGATIVE_ANSWERS
+from ..utils.style import color_yellow_bold, color_cyan, color_white_bold, color_green
+from ..const.common import STEPS
+from ..database.database import delete_unconnected_steps_from, delete_all_app_development_data, update_app_status
+from ..const.ipc import MESSAGE_TYPE
+from ..prompts.prompts import ask_user
+from ..helpers.exceptions.TokenLimitError import TokenLimitError
+from ..utils.questionary import styled_text
+from ..helpers.files import get_directory_contents, get_file_contents, clear_directory, update_file
+from ..helpers.cli import build_directory_tree
+from ..helpers.agents.TechLead import TechLead
+from ..helpers.agents.Developer import Developer
+from ..helpers.agents.Architect import Architect
+from ..helpers.agents.ProductOwner import ProductOwner
+from ..helpers.agents.TechnicalWriter import TechnicalWriter
 
-from database.models.development_steps import DevelopmentSteps
-from database.models.file_snapshot import FileSnapshot
-from database.models.files import File
-from logger.logger import logger
-from utils.dot_gpt_pilot import DotGptPilot
-from utils.llm_connection import test_api_access
-from utils.ignore import IgnoreMatcher
+from ..database.models.development_steps import DevelopmentSteps
+from ..database.models.file_snapshot import FileSnapshot
+from ..database.models.files import File
+from ..logger.logger import logger
+from ..utils.dot_gpt_pilot import DotGptPilot
+from ..utils.llm_connection import test_api_access
+from ..utils.ignore import IgnoreMatcher
 
-from utils.telemetry import telemetry
+from ..utils.telemetry import telemetry
 
 class Project:
     def __init__(self, args, name=None, project_description=None, clarifications=None, user_stories=None,

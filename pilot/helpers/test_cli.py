@@ -3,8 +3,8 @@ from unittest.mock import patch, MagicMock, call
 
 import pytest
 
-from helpers.cli import execute_command, terminate_process, run_command_until_success
-from helpers.test_Project import create_project
+from ..helpers.cli import execute_command, terminate_process, run_command_until_success
+from ..helpers.test_Project import create_project
 
 @pytest.mark.xfail()
 @patch("helpers.cli.os")
