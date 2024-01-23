@@ -628,25 +628,3 @@ class Developer(Agent):
                     return_value = {'success': True, 'user_input': user_feedback}
 
             return return_value
-
-    def implement_step(self, convo, step_index, type, description):
-        logger.info('Implementing %s step #%d: %s', type, step_index, description)
-        # TODO remove hardcoded folder path
-        directory_tree = self.project.get_directory_tree(True)
-        llm_response = convo.send_message('development/task/next_step.prompt', {
-            'finished_steps': [],
-            'step_description': description,
-            'step_type': type,
-            'directory_tree': directory_tree,
-            'step_index': step_index
-        }, EXECUTE_COMMANDS)
-
-        step_details = llm_response['commands']
-
-        if type == 'COMMAND':
-            for cmd in step_details:
-                run_command_until_success(convo, cmd['command'], timeout=cmd['timeout'])
-        # elif type == 'CODE_CHANGE':
-        #     code_changes_details = get_step_code_changes()
-        #     # TODO: give to code monkey for implementation
-        pass

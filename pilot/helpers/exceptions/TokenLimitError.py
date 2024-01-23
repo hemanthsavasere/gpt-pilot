@@ -1,4 +1,4 @@
-from ....pilot.const.llm import MAX_GPT_MODEL_TOKENS
+from pilot.const.llm import MAX_GPT_MODEL_TOKENS
 
 
 class TokenLimitError(Exception):

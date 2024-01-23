@@ -30,7 +30,6 @@ from pilot.utils.dot_gpt_pilot import DotGptPilot
 from pilot.utils.llm_connection import test_api_access
 from pilot.utils.ignore import IgnoreMatcher
 
-from pilot.utils.telemetry import telemetry
 
 
 class Project:
@@ -96,12 +95,11 @@ class Project:
         if not test_api_access(self):
             return False
 
-        telemetry.start()
         self.project_manager = ProductOwner(self)
         self.project_manager.get_project_description()
 
         self.project_manager.get_user_stories()
-        # self.user_tasks = self.project_manager.get_user_tasks()
+        self.user_tasks = self.project_manager.get_user_tasks()
 
         self.architect = Architect(self)
         self.architect.get_architecture()
@@ -413,9 +411,6 @@ class Project:
             total_files += 1
             if isinstance(file['content'], str):
                 total_lines += file['content'].count('\n') + 1
-
-        telemetry.set("num_files", total_files)
-        telemetry.set("num_lines", total_lines)
 
     def restore_files(self, development_step_id):
         development_step = DevelopmentSteps.get(DevelopmentSteps.id == development_step_id)
