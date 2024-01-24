@@ -1,6 +1,7 @@
 import os
 import re
 import logging
+import sys
 
 
 def setup_logger():
@@ -23,6 +24,10 @@ def setup_logger():
     # Create a logger and add the handler
     logger = logging.getLogger()
     logger.addHandler(file_handler)
+
+    # Create a log handler for stdout
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    logger.addHandler(stdout_handler)
 
     if os.getenv('DEBUG') == 'true':
         logger.setLevel(logging.DEBUG)
